@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build
-        run: yarn setup && yarn workspace reality build
+        run: yarn setup && yarn workspace @kalidao/reality build
 
   lint:
     name: Lint
