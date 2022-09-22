@@ -1,5 +1,5 @@
 {
-  "name": "reality",
+  "name": "@kali/reality",
   "version": "0.0.112",
   "description": "Design system for Kali apps",
   "main": "./dist/index.cjs.js",
