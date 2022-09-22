@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { default as copy } from 'copy-to-clipboard'
 
-import { Button, IconCheck, IconDuplicate } from 'reality/components'
+import { Button, IconCheck, IconDuplicate } from '@kalidao/reality/components'
 
 type Props = {
   content: string

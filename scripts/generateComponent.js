@@ -82,7 +82,7 @@ const componentsDir = path.join(baseDir, 'components/src/components')
           ---
 
           \`\`\`tsx
-          import { ${componentName} } from 'reality'
+          import { ${componentName} } from @kalidao/reality
           \`\`\`
 
           \`\`\`tsx live=true expand=true

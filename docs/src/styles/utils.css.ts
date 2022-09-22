@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
 
-import { atoms, vars } from 'reality/css'
+import { atoms, vars } from '@kalidao/reality/css'
 
 export const hoverParent = style({})
 

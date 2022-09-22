@@ -1,7 +1,7 @@
 import { MDXProviderProps } from '@mdx-js/react'
 import slugify from '@sindresorhus/slugify'
 
-import { Box, Heading, Text } from 'reality/components'
+import { Box, Heading, Text } from '@kalidao/reality/components'
 
 import * as styles from '~/styles/utils.css'
 import { CodeBlock } from './CodeBlock'

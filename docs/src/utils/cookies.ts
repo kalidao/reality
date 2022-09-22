@@ -1,6 +1,6 @@
 import { parseCookies, setCookie } from 'nookies'
 
-import { Accent, Mode } from 'reality/tokens'
+import { Accent, Mode } from '@kalidao/reality/tokens'
 
 export const accentKey = 'accent'
 export const modeKey = 'mode'

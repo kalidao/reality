@@ -5,8 +5,8 @@ import {
 } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
 
-import { Box } from 'reality/components'
-import { vars } from 'reality/css'
+import { Box } from '@kalidao/reality/components'
+import { vars } from '@kalidao/reality/css'
 
 export const SkipNavLink = ({ children, ...rest }: SkipNavLinkProps) => {
   return (

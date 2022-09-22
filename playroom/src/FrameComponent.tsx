@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { ThemeProvider } from 'reality/components'
+import { ThemeProvider } from '@kalidao/reality/components'
 
 import { PlayroomStateProvider } from './PlayroomState'
 import './styles.css'

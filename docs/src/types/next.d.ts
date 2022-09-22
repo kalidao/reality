@@ -2,7 +2,7 @@ import * as React from 'react'
 import { NextPage } from 'next'
 import { AppProps as NextAppProps } from 'next/app'
 
-import { EmptyObject } from 'reality/types'
+import { EmptyObject } from '@kalidao/reality/types'
 
 declare module 'next' {
   export type NextLayout<P = EmptyObject> = (props: React.PropsWithChildren<P>) => React.ReactElement

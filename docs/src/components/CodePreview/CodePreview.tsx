@@ -5,9 +5,9 @@ import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
 import { mdx } from '@mdx-js/react'
 import { PrismTheme } from 'prism-react-renderer'
 
-import * as Components from 'reality/components'
-import { Box, Button, Stack, Text, useTheme } from 'reality/components'
-import { vars } from 'reality/css'
+import * as Components from '@kalidao/reality/components'
+import { Box, Button, Stack, Text, useTheme } from '@kalidao/reality/components'
+import { vars } from '@kalidao/reality/css'
 
 import { createPlayroomLink } from '~/utils/playroom'
 import { usePlayroomStore } from '../../../../playroom/src/PlayroomState'
