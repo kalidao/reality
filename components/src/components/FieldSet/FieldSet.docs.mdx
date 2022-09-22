@@ -4,18 +4,13 @@ description: Group related form elements
 ---
 
 ```tsx
-import { FieldSet } from 'degen'
+import { FieldSet } from 'reality'
 ```
 
 ```tsx live=true expand=true
 <FieldSet legend="Token">
   <Input label="Name" placeholder="Mirror Write Token" />
-  <Input
-    label="Symbol"
-    placeholder="WRITE"
-    prefix="$"
-    textTransform="uppercase"
-  />
+  <Input label="Symbol" placeholder="WRITE" prefix="$" textTransform="uppercase" />
 </FieldSet>
 ```
 
@@ -28,12 +23,7 @@ import { FieldSet } from 'degen'
 ```tsx live=true
 <FieldSet description="Basic information about your token." legend="Token">
   <Input label="Name" placeholder="Mirror Write Token" />
-  <Input
-    label="Symbol"
-    placeholder="WRITE"
-    prefix="$"
-    textTransform="uppercase"
-  />
+  <Input label="Symbol" placeholder="WRITE" prefix="$" textTransform="uppercase" />
 </FieldSet>
 ```
 
@@ -42,12 +32,7 @@ import { FieldSet } from 'degen'
 ```tsx live=true
 <FieldSet legend="Token" status="required">
   <Input label="Name" placeholder="Mirror Write Token" />
-  <Input
-    label="Symbol"
-    placeholder="WRITE"
-    prefix="$"
-    textTransform="uppercase"
-  />
+  <Input label="Symbol" placeholder="WRITE" prefix="$" textTransform="uppercase" />
 </FieldSet>
 ```
 
@@ -58,12 +43,7 @@ Uses native [`fieldset[disabled]`](https://developer.mozilla.org/en-US/docs/Web/
 ```tsx live=true
 <FieldSet disabled legend="Token">
   <Input label="Name" placeholder="Mirror Write Token" />
-  <Input
-    label="Symbol"
-    placeholder="WRITE"
-    prefix="$"
-    textTransform="uppercase"
-  />
+  <Input label="Symbol" placeholder="WRITE" prefix="$" textTransform="uppercase" />
 </FieldSet>
 ```
 
@@ -73,30 +53,12 @@ Notice how the field styles also change inside the `FieldSet` depending on the `
 
 ```tsx live=true
 <Stack space="10">
-  <FieldSet
-    description="This is a medium size FieldSet"
-    legend="Token"
-    size="medium"
-    status="required"
-  >
-    <Input
-      description="Token name shows up in wallets."
-      label="Name"
-      placeholder="Mirror Write Token"
-    />
+  <FieldSet description="This is a medium size FieldSet" legend="Token" size="medium" status="required">
+    <Input description="Token name shows up in wallets." label="Name" placeholder="Mirror Write Token" />
   </FieldSet>
 
-  <FieldSet
-    description="This is a small size FieldSet"
-    legend="Token"
-    size="small"
-    status="required"
-  >
-    <Input
-      description="Token name shows up in wallets."
-      label="Name"
-      placeholder="Mirror Write Token"
-    />
+  <FieldSet description="This is a small size FieldSet" legend="Token" size="small" status="required">
+    <Input description="Token name shows up in wallets." label="Name" placeholder="Mirror Write Token" />
   </FieldSet>
 </Stack>
 ```

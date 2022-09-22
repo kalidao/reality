@@ -49,9 +49,7 @@ vars
 
 ```tsx live=true
 <Stack>
-  <Text size="extraLarge">
-    {getState('counter') != null ? getState('counter') : 2}
-  </Text>
+  <Text size="extraLarge">{getState('counter') != null ? getState('counter') : 2}</Text>
   <Stack align="center" direction="horizontal">
     <Button
       disabled={getState('locked')}
@@ -71,21 +69,12 @@ vars
     </Button>
 
     {getState('counter') != null && getState('counter') !== 2 && (
-      <Button
-        disabled={getState('locked')}
-        size="small"
-        variant="tertiary"
-        onClick={() => resetState()}
-      >
+      <Button disabled={getState('locked')} size="small" variant="tertiary" onClick={() => resetState()}>
         Reset
       </Button>
     )}
 
-    <Button
-      size="small"
-      variant="tertiary"
-      onClick={() => toggleState('locked')}
-    >
+    <Button size="small" variant="tertiary" onClick={() => toggleState('locked')}>
       {getState('locked') ? 'Unlock' : 'Lock'}
     </Button>
 

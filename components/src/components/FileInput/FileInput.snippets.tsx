@@ -6,10 +6,6 @@ import { FileInput } from './FileInput'
 export const snippets: Snippet[] = [
   {
     name: 'Basic',
-    code: (
-      <FileInput>
-        {(context) => (context.name ? <div>{context.name}</div> : <div />)}
-      </FileInput>
-    ),
+    code: <FileInput>{(context) => (context.name ? <div>{context.name}</div> : <div />)}</FileInput>,
   },
 ]

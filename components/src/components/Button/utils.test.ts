@@ -7,11 +7,8 @@ describe.each`
   ${true}      | ${'medium'} | ${'right'} | ${{ position: 'absolute', right: 5 }}
   ${true}      | ${'large'}  | ${'right'} | ${{ position: 'absolute', right: 4 }}
   ${undefined} | ${'small'}  | ${'left'}  | ${{}}
-`(
-  'getCenterProps($center, $size, $side)',
-  ({ center, size, side, expected }) => {
-    it(`returns ${JSON.stringify(expected)}`, () => {
-      expect(getCenterProps(center, size, side)).toEqual(expected)
-    })
-  },
-)
+`('getCenterProps($center, $size, $side)', ({ center, size, side, expected }) => {
+  it(`returns ${JSON.stringify(expected)}`, () => {
+    expect(getCenterProps(center, size, side)).toEqual(expected)
+  })
+})

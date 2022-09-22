@@ -4,7 +4,7 @@ description: Surface for accepting user input
 ---
 
 ```tsx
-import { Input } from 'degen'
+import { Input } from 'reality'
 ```
 
 ```tsx live=true expand=true
@@ -34,29 +34,16 @@ import { Input } from 'degen'
 ## Error
 
 ```tsx live=true
-<Input
-  error="Wallet address is required"
-  label="Wallet Address"
-  placeholder="0xA0Cf…251e"
-/>
+<Input error="Wallet address is required" label="Wallet Address" placeholder="0xA0Cf…251e" />
 ```
 
 ## Affixes
 
 ```tsx live=true
 <Stack>
-  <Input
-    label="Search"
-    placeholder="Name or wallet address"
-    prefix={<IconSearch />}
-  />
+  <Input label="Search" placeholder="Name or wallet address" prefix={<IconSearch />} />
   <Input label="Funding Goal" placeholder="10" prefix="Ξ" type="number" />
-  <Input
-    label="Subdomain"
-    placeholder="subdomain"
-    suffix=".mirror.xyz"
-    type="text"
-  />
+  <Input label="Subdomain" placeholder="subdomain" suffix=".mirror.xyz" type="text" />
 </Stack>
 ```
 

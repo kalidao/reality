@@ -92,9 +92,7 @@ export const Input = React.forwardRef(
       ghostValue?: Props['value']
     }>({ ghostValue: value || defaultValue })
 
-    const placeholderText = placeholder
-      ? `${placeholder ?? ''}${units ? ` ${units}` : ''}`
-      : undefined
+    const placeholderText = placeholder ? `${placeholder ?? ''}${units ? ` ${units}` : ''}` : undefined
     const hasError = error ? true : undefined
     const className = styles.variants({
       prefix: prefix ? true : undefined,
@@ -103,13 +101,10 @@ export const Input = React.forwardRef(
     const max = (props as WithTypeNumber).max
     const inputType = type === 'number' ? 'number' : 'text'
 
-    const handleInput = React.useCallback(
-      (event: React.FormEvent<HTMLInputElement>) => {
-        const value = (event.target as HTMLInputElement).value
-        setState((x) => ({ ...x, ghostValue: value }))
-      },
-      [],
-    )
+    const handleInput = React.useCallback((event: React.FormEvent<HTMLInputElement>) => {
+      const value = (event.target as HTMLInputElement).value
+      setState((x) => ({ ...x, ghostValue: value }))
+    }, [])
 
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -123,12 +118,9 @@ export const Input = React.forwardRef(
       [type, onKeyDown],
     )
 
-    const handleWheel = React.useCallback(
-      (event: React.WheelEvent<HTMLElement>) => {
-        ;(event.target as HTMLElement)?.blur()
-      },
-      [],
-    )
+    const handleWheel = React.useCallback((event: React.WheelEvent<HTMLElement>) => {
+      ;(event.target as HTMLElement)?.blur()
+    }, [])
 
     const handleMax = React.useCallback(() => {
       if (onChange)
@@ -162,12 +154,7 @@ export const Input = React.forwardRef(
             ]}
           >
             {prefix && (
-              <Box
-                aria-hidden="true"
-                as="label"
-                className={styles.prefix}
-                {...ids?.label}
-              >
+              <Box aria-hidden="true" as="label" className={styles.prefix} {...ids?.label}>
                 {prefix}
               </Box>
             )}
@@ -219,11 +206,7 @@ export const Input = React.forwardRef(
                   ]}
                   data-testid="ghost"
                 >
-                  <Box
-                    as="span"
-                    textTransform={textTransform}
-                    visibility="hidden"
-                  >
+                  <Box as="span" textTransform={textTransform} visibility="hidden">
                     {state.ghostValue}{' '}
                   </Box>
                   <Box as="span" color="text">
@@ -234,11 +217,7 @@ export const Input = React.forwardRef(
             </Box>
 
             {max && (
-              <Box
-                alignItems="center"
-                display="flex"
-                paddingRight={suffix ? undefined : '4'}
-              >
+              <Box alignItems="center" display="flex" paddingRight={suffix ? undefined : '4'}>
                 <Box as="button" className={styles.max} onClick={handleMax}>
                   Max
                 </Box>
@@ -246,12 +225,7 @@ export const Input = React.forwardRef(
             )}
 
             {suffix && (
-              <Box
-                aria-hidden="true"
-                as="label"
-                className={styles.suffix}
-                {...ids?.label}
-              >
+              <Box aria-hidden="true" as="label" className={styles.suffix} {...ids?.label}>
                 {suffix}
               </Box>
             )}

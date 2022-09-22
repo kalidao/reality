@@ -1,15 +1,10 @@
-import {
-  GetStaticPaths,
-  GetStaticProps,
-  InferGetStaticPropsType,
-  NextPageWithLayout,
-} from 'next'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPageWithLayout } from 'next'
 import fs from 'fs-extra'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 
-import { Box, Text } from 'degen/components'
+import { Box, Text } from 'reality/components'
 
 import { Props as LayoutProps, getLayout } from '~/layouts/docs'
 import { getGuideName, getGuidePaths } from '~/utils/fs'
@@ -33,9 +28,7 @@ type StaticProps = {
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   const slug = context.params?.slug?.toString() as string
-  const pathname = getGuidePaths().find(
-    (x) => getGuideName(x) === slug,
-  ) as string
+  const pathname = getGuidePaths().find((x) => getGuideName(x) === slug) as string
   const source = fs.readFileSync(pathname)
   const { content, data } = matter(source)
 
@@ -43,7 +36,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
     scope: data,
   })
 
-  const docsLink = createGitHubLink(pathname.replace(/^\/.*degen/i, ''))
+  const docsLink = createGitHubLink(pathname.replace(/^\/.*reality/i, ''))
 
   return {
     props: {

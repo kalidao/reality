@@ -1,6 +1,6 @@
 import { parseCookies, setCookie } from 'nookies'
 
-import { Accent, Mode } from 'degen/tokens'
+import { Accent, Mode } from 'reality/tokens'
 
 export const accentKey = 'accent'
 export const modeKey = 'mode'
@@ -18,5 +18,4 @@ export const setThemeMode = (mode: string) =>
 export const getThemeAccent = (): Accent | 'foreground' | undefined =>
   parseCookies({})?.[accentKey] as Accent | 'foreground' | undefined
 
-export const getThemeMode = (): Mode | undefined =>
-  parseCookies({})?.[modeKey] as Mode | undefined
+export const getThemeMode = (): Mode | undefined => parseCookies({})?.[modeKey] as Mode | undefined

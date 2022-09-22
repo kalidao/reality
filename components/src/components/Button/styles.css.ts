@@ -66,14 +66,8 @@ export type Size = keyof typeof size
 const getAccentVars = (colorVar: CSSVarFunction) => ({
   [vars.colors.accent]: rgb(colorVar),
   [vars.colors.accentText]: vars.colors.white,
-  [vars.colors.accentSecondary]: rgb(
-    colorVar,
-    vars.mode.shades.accentSecondary,
-  ),
-  [vars.colors.accentSecondaryHover]: rgb(
-    colorVar,
-    vars.mode.shades.accentSecondaryHover,
-  ),
+  [vars.colors.accentSecondary]: rgb(colorVar, vars.mode.shades.accentSecondary),
+  [vars.colors.accentSecondaryHover]: rgb(colorVar, vars.mode.shades.accentSecondaryHover),
 })
 
 const tone = {
@@ -93,6 +87,9 @@ const tone = {
   }),
   pink: style({
     vars: getAccentVars(vars.mode.colors.pink),
+  }),
+  violet: style({
+    vars: getAccentVars(vars.mode.colors.violet),
   }),
 }
 
@@ -201,12 +198,7 @@ const getShapeSizeCompoundVariant = (shape: Shape, size: Size) => ({
   },
   style: style([
     atoms({
-      borderRadius:
-        shape === 'square'
-          ? size === 'small' || size === 'medium'
-            ? 'large'
-            : '2xLarge'
-          : undefined,
+      borderRadius: shape === 'square' ? (size === 'small' || size === 'medium' ? 'large' : '2xLarge') : undefined,
     }),
     style({
       padding: 0,

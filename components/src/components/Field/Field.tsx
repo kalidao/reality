@@ -43,19 +43,8 @@ export const Field = ({
   })
 
   const labelContent = (
-    <Box
-      alignItems="flex-end"
-      display="flex"
-      justifyContent="space-between"
-      paddingX="4"
-    >
-      <Box
-        as="label"
-        color="textSecondary"
-        fontSize="small"
-        fontWeight="semiBold"
-        {...ids.label}
-      >
+    <Box alignItems="flex-end" display="flex" justifyContent="space-between" paddingX="4">
+      <Box as="label" color="textSecondary" fontSize="small" fontWeight="semiBold" {...ids.label}>
         {label} {required && <VisuallyHidden>(required)</VisuallyHidden>}
       </Box>
       {labelSecondary && labelSecondary}
@@ -75,33 +64,18 @@ export const Field = ({
 
   return (
     <Box display="flex" flexDirection="column" gap="2" width={width}>
-      {hideLabel ? (
-        <VisuallyHidden>{labelContent}</VisuallyHidden>
-      ) : (
-        labelContent
-      )}
+      {hideLabel ? <VisuallyHidden>{labelContent}</VisuallyHidden> : labelContent}
 
       {content}
 
       {description && (
-        <Box
-          color="textTertiary"
-          fontSize="small"
-          paddingX="4"
-          {...ids.description}
-        >
+        <Box color="textTertiary" fontSize="small" paddingX="4" {...ids.description}>
           {description}
         </Box>
       )}
 
       {error && (
-        <Box
-          aria-live="polite"
-          color="red"
-          fontSize="small"
-          paddingX="4"
-          {...ids.error}
-        >
+        <Box aria-live="polite" color="red" fontSize="small" paddingX="4" {...ids.error}>
           {error}
         </Box>
       )}

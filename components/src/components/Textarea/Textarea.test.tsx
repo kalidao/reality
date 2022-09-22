@@ -16,15 +16,11 @@ describe('<Textarea />', () => {
     render(<Textarea label="Why are you entering $WRITE Race?" />)
 
     userEvent.type(screen.getByRole('textbox'), 'I love writing and crypto.')
-    expect(screen.getByRole('textbox')).toHaveValue(
-      'I love writing and crypto.',
-    )
+    expect(screen.getByRole('textbox')).toHaveValue('I love writing and crypto.')
   })
 
   it('maxLength', () => {
-    render(
-      <Textarea label="Why are you entering $WRITE Race?" maxLength={14} />,
-    )
+    render(<Textarea label="Why are you entering $WRITE Race?" maxLength={14} />)
 
     const element = screen.getByLabelText(/why/i)
     userEvent.type(element, 'I love writing and crypto.')

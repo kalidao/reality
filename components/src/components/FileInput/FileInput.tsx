@@ -79,12 +79,7 @@ export const FileInput = React.forwardRef(
         // Disallow file larger than max
         if (maxSize && file.size > maxSize * 1_000_000) {
           event?.preventDefault()
-          onError &&
-            onError(
-              `File is ${(file.size / 1_000_000).toFixed(
-                2,
-              )} MB. Must be smaller than ${maxSize} MB`,
-            )
+          onError && onError(`File is ${(file.size / 1_000_000).toFixed(2)} MB. Must be smaller than ${maxSize} MB`)
           return
         }
         setState((x) => ({
@@ -107,21 +102,15 @@ export const FileInput = React.forwardRef(
       [handleFile],
     )
 
-    const handleDragOver = React.useCallback(
-      (event: React.DragEvent<HTMLInputElement>) => {
-        event.preventDefault()
-        setState((x) => ({ ...x, droppable: true }))
-      },
-      [],
-    )
+    const handleDragOver = React.useCallback((event: React.DragEvent<HTMLInputElement>) => {
+      event.preventDefault()
+      setState((x) => ({ ...x, droppable: true }))
+    }, [])
 
-    const handleDragLeave = React.useCallback(
-      (event: React.DragEvent<HTMLInputElement>) => {
-        event.preventDefault()
-        setState((x) => ({ ...x, droppable: false }))
-      },
-      [],
-    )
+    const handleDragLeave = React.useCallback((event: React.DragEvent<HTMLInputElement>) => {
+      event.preventDefault()
+      setState((x) => ({ ...x, droppable: false }))
+    }, [])
 
     const handleDrop = React.useCallback(
       (event: React.DragEvent<HTMLInputElement>) => {
@@ -214,13 +203,7 @@ export const FileInput = React.forwardRef(
           />
         </VisuallyHidden>
 
-        <Box
-          as="label"
-          {...ids.label}
-          onDragLeave={handleDragLeave}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-        >
+        <Box as="label" {...ids.label} onDragLeave={handleDragLeave} onDragOver={handleDragOver} onDrop={handleDrop}>
           {children({ ...state, reset })}
         </Box>
       </Box>

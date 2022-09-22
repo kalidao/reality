@@ -9,17 +9,8 @@ import { VisuallyHidden } from '../VisuallyHidden'
 import { IconClose, IconExclamation, IconUpload } from '../icons'
 import * as styles from './styles.css'
 
-type Image =
-  | 'image/jpeg'
-  | 'image/png'
-  | 'image/webp'
-  | 'image/jpeg, image/png, image/webp'
-type Video =
-  | 'image/gif'
-  | 'video/mp4'
-  | 'video/ogg'
-  | 'video/webm'
-  | 'image/gif, video/mp4, video/ogg, video/webm'
+type Image = 'image/jpeg' | 'image/png' | 'image/webp' | 'image/jpeg, image/png, image/webp'
+type Video = 'image/gif' | 'video/mp4' | 'video/ogg' | 'video/webm' | 'image/gif, video/mp4, video/ogg, video/webm'
 export type Accept = Image | Video | `${Image}, ${Video}`
 
 type BaseProps = {
@@ -127,10 +118,7 @@ export const MediaPicker = ({
                     context.file.name
                   ) : (
                     <>
-                      {label}{' '}
-                      {required && (
-                        <VisuallyHidden as="span">(required)</VisuallyHidden>
-                      )}
+                      {label} {required && <VisuallyHidden as="span">(required)</VisuallyHidden>}
                     </>
                   )}
                 </Box>
@@ -146,29 +134,15 @@ export const MediaPicker = ({
             </Box>
 
             {cover && context.type && context.previewUrl && (
-              <Box
-                display="flex"
-                inset="0"
-                justifyContent="center"
-                position="absolute"
-              >
-                <Media
-                  cover
-                  name={context.name}
-                  type={context.type}
-                  url={context.previewUrl}
-                />
+              <Box display="flex" inset="0" justifyContent="center" position="absolute">
+                <Media cover name={context.name} type={context.type} url={context.previewUrl} />
               </Box>
             )}
           </Box>
 
           {context.type && (
             <Box position="absolute" right="2" top="2">
-              <RemoveButton
-                cover={cover}
-                uploading={uploading}
-                onClick={context.reset}
-              />
+              <RemoveButton cover={cover} uploading={uploading} onClick={context.reset} />
             </Box>
           )}
         </Box>
@@ -193,10 +167,8 @@ const Media = ({ cover, name, type, url }: MediaProps) => {
         maxHeight: 'full',
         maxWidth: 'full',
       }
-  if (type.includes('image'))
-    return <Box alt={name} as="img" src={url} {...boxProps} />
-  else if (type.includes('video'))
-    return <Box as="video" autoPlay loop muted src={url} {...boxProps} />
+  if (type.includes('image')) return <Box alt={name} as="img" src={url} {...boxProps} />
+  else if (type.includes('video')) return <Box as="video" autoPlay loop muted src={url} {...boxProps} />
   return null
 }
 
@@ -207,18 +179,10 @@ type MediaPreviewProps = Pick<Props, 'compact' | 'uploading'> & {
   previewUrl?: string
 }
 
-const MediaPreview = ({
-  compact,
-  fileName,
-  fileType,
-  hasError,
-  previewUrl,
-  uploading,
-}: MediaPreviewProps) => {
+const MediaPreview = ({ compact, fileName, fileType, hasError, previewUrl, uploading }: MediaPreviewProps) => {
   let content: React.ReactNode
   if (uploading) content = <Spinner />
-  else if (fileType && previewUrl)
-    content = <Media name={fileName} type={fileType} url={previewUrl} />
+  else if (fileType && previewUrl) content = <Media name={fileName} type={fileType} url={previewUrl} />
   else if (hasError) content = <IconExclamation />
   else content = <IconUpload />
 
@@ -229,34 +193,20 @@ const MediaPreview = ({
   )
 }
 
-type MediaTagProps = Pick<
-  Props,
-  'compact' | 'error' | 'maxSize' | 'uploadProgress' | 'uploaded' | 'uploading'
->
+type MediaTagProps = Pick<Props, 'compact' | 'error' | 'maxSize' | 'uploadProgress' | 'uploaded' | 'uploading'>
 
-const MediaTag = ({
-  compact,
-  error,
-  maxSize,
-  uploadProgress,
-  uploaded,
-  uploading,
-}: MediaTagProps) => {
+const MediaTag = ({ compact, error, maxSize, uploadProgress, uploaded, uploading }: MediaTagProps) => {
   let statusProps: Parameters<typeof Tag>[0] | undefined
   if (uploading)
     statusProps = {
       tone: 'accent',
-      ...(uploadProgress
-        ? { label: 'Uploading', children: `${uploadProgress * 100}%` }
-        : { children: 'Uploading' }),
+      ...(uploadProgress ? { label: 'Uploading', children: `${uploadProgress * 100}%` } : { children: 'Uploading' }),
     }
   else if (uploaded) statusProps = { children: 'Success', tone: 'green' }
   else if (error)
     statusProps = {
       tone: 'red',
-      ...(typeof error === 'string'
-        ? { label: 'Error', children: error }
-        : { children: 'Error' }),
+      ...(typeof error === 'string' ? { label: 'Error', children: error } : { children: 'Error' }),
     }
   else if (maxSize !== undefined)
     statusProps = {

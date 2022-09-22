@@ -12,9 +12,5 @@ export const atoms = ({ reset, ...rest }: Atoms) => {
   const sprinklesClasses = sprinkles(rest)
   const injectedStyleClasses = getInjectedStyleClasses(rest)
 
-  return clsx(
-    reset && [resetStyles.base, resetStyles.element[reset]],
-    sprinklesClasses,
-    injectedStyleClasses,
-  )
+  return clsx(reset && [resetStyles.base, resetStyles.element[reset]], sprinklesClasses, injectedStyleClasses)
 }

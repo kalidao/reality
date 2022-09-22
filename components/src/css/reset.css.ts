@@ -9,8 +9,7 @@ import { vars } from './vars.css'
  * Remove once better browser support
  * https://caniuse.com/css-focus-visible
  */
-const hideFocusRingsDataAttribute =
-  '[data-js-focus-visible] &:focus:not([data-focus-visible-added])'
+const hideFocusRingsDataAttribute = '[data-js-focus-visible] &:focus:not([data-focus-visible-added])'
 
 export const base = resetStyles({
   // Prevent padding and border from affecting element width

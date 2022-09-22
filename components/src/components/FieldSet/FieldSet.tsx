@@ -31,17 +31,7 @@ type Props = {
 
 export const Context = React.createContext<{ size?: Props['size'] }>({})
 
-export const FieldSet = ({
-  children,
-  description,
-  disabled,
-  form,
-  legend,
-  name,
-  size,
-  space = '4',
-  status,
-}: Props) => {
+export const FieldSet = ({ children, description, disabled, form, legend, name, size, space = '4', status }: Props) => {
   let statusText: string | undefined
   let statusTone: TagProps['tone']
   switch (status) {
@@ -70,21 +60,8 @@ export const FieldSet = ({
   const isSmall = size === 'small'
 
   return (
-    <Box
-      as="fieldset"
-      disabled={disabled}
-      display="flex"
-      flexDirection="column"
-      form={form}
-      gap={space}
-      name={name}
-    >
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap={isSmall ? '0' : '1'}
-        paddingX="4"
-      >
+    <Box as="fieldset" disabled={disabled} display="flex" flexDirection="column" form={form} gap={space} name={name}>
+      <Box display="flex" flexDirection="column" gap={isSmall ? '0' : '1'} paddingX="4">
         <Stack align="center" direction="horizontal" space="3">
           {isSmall ? (
             <Text size="base" weight="semiBold">
@@ -102,11 +79,7 @@ export const FieldSet = ({
           )}
         </Stack>
 
-        <Box
-          color="textSecondary"
-          fontSize="small"
-          lineHeight={isSmall ? '1.5' : undefined}
-        >
+        <Box color="textSecondary" fontSize="small" lineHeight={isSmall ? '1.5' : undefined}>
           {description}
         </Box>
       </Box>

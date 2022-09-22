@@ -19,14 +19,7 @@ type Props = {
   tag?: string
 }
 
-export const AvatarGroup = ({
-  as,
-  limit = 3,
-  members = [],
-  hover,
-  size = '6',
-  tag,
-}: Props) => {
+export const AvatarGroup = ({ as, limit = 3, members = [], hover, size = '6', tag }: Props) => {
   const membersCount = members.length
   const visibleMembers = members.slice(0, limit)
   const variantSize = size < 5 ? 'small' : 'large'
@@ -43,14 +36,7 @@ export const AvatarGroup = ({
             key={x.label}
             marginLeft={i === 0 ? '0' : variantSize === 'small' ? '-1' : '-1.5'}
           >
-            <Avatar
-              address={x.address}
-              as={as}
-              label={x.label}
-              placeholder={x.placeholder}
-              size={size}
-              src={x.src}
-            />
+            <Avatar address={x.address} as={as} label={x.label} placeholder={x.placeholder} size={size} src={x.src} />
           </Box>
         ))}
       </Box>
@@ -61,10 +47,7 @@ export const AvatarGroup = ({
           className={styles.wrapper}
           marginLeft={variantSize === 'small' ? '-1' : '-1.5'}
         >
-          <Tag
-            hover={hover}
-            size={variantSize === 'small' ? 'small' : 'medium'}
-          >
+          <Tag hover={hover} size={variantSize === 'small' ? 'small' : 'medium'}>
             {tagValue}
           </Tag>
         </Box>

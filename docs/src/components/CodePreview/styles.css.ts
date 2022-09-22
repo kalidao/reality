@@ -1,6 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css'
 
-import { vars } from 'degen/css'
+import { vars } from 'reality/css'
 
 globalStyle('.npm__react-simple-code-editor__textarea', {
   fontFamily: vars.fonts.mono + ' !important',

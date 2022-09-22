@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { ThemeProvider } from 'degen/components'
+import { ThemeProvider } from 'reality/components'
 
 import { PlayroomStateProvider } from './PlayroomState'
 import './styles.css'
@@ -11,10 +11,7 @@ type Props = {
   theme?: ThemeProviderProps['defaultMode']
 }
 
-const FrameComponent = ({
-  children,
-  theme,
-}: React.PropsWithChildren<Props>) => (
+const FrameComponent = ({ children, theme }: React.PropsWithChildren<Props>) => (
   <>
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
     <PlayroomStateProvider>

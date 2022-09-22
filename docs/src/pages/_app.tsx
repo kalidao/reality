@@ -3,7 +3,7 @@ import { AppProps } from 'next'
 import { MDXProvider } from '@mdx-js/react'
 import Head from 'next/head'
 
-import { ThemeProvider } from 'degen/components'
+import { ThemeProvider } from 'reality/components'
 
 import { MDX } from '~/components'
 import { getLayout as getDocsLayout } from '~/layouts/docs'
@@ -14,10 +14,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   const getLayout = Component.getLayout || getDocsLayout
 
   return (
-    <ThemeProvider
-      defaultAccent={getThemeAccent()}
-      defaultMode={getThemeMode() ?? 'dark'}
-    >
+    <ThemeProvider defaultAccent={getThemeAccent() ?? 'violet'} defaultMode={getThemeMode() ?? 'dark'}>
       <Head>
         {/* Prevent theme flash */}
         <script
@@ -27,9 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
 
-      <MDXProvider components={MDX}>
-        {getLayout(<Component {...pageProps} />)}
-      </MDXProvider>
+      <MDXProvider components={MDX}>{getLayout(<Component {...pageProps} />)}</MDXProvider>
     </ThemeProvider>
   )
 }

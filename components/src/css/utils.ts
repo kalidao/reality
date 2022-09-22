@@ -13,8 +13,7 @@ export const getAccentText = (mode: Mode, accent: Accent | 'foreground') =>
 
 export const getModeColors = (mode: Mode) => tokens.colors[mode]
 
-export const getVarName = (_value: string | null, path: string[]) =>
-  path.join('-').replace('.', '_').replace('/', '__')
+export const getVarName = (_value: string | null, path: string[]) => path.join('-').replace('.', '_').replace('/', '__')
 
 export const motionSafe = (style: StyleRule) => ({
   '@media': {

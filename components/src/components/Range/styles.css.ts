@@ -1,9 +1,4 @@
-import {
-  StyleRule,
-  assignVars,
-  createThemeContract,
-  style,
-} from '@vanilla-extract/css'
+import { StyleRule, assignVars, createThemeContract, style } from '@vanilla-extract/css'
 import { calc } from '@vanilla-extract/css-utils'
 
 import { vars as globalVars } from '../../css'
@@ -60,10 +55,7 @@ export const range = style({
   '::-webkit-slider-thumb': {
     ...thumb,
     WebkitAppearance: 'none',
-    marginTop: calc(vars.trackHeight)
-      .subtract(vars.thumbSize)
-      .divide(2)
-      .toString(), // Centers thumb on webkit
+    marginTop: calc(vars.trackHeight).subtract(vars.thumbSize).divide(2).toString(), // Centers thumb on webkit
     boxShadow: 'none', // iOS
   },
 

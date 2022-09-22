@@ -2,15 +2,9 @@ import * as React from 'react'
 import { GetLayout, NextLayout } from 'next'
 import Head from 'next/head'
 
-import { Box } from 'degen/components'
+import { Box } from 'reality/components'
 
-import {
-  Header,
-  Nav,
-  NavProps,
-  SkipNavContent,
-  SkipNavLink,
-} from '~/components'
+import { Header, Nav, NavProps, SkipNavContent, SkipNavLink } from '~/components'
 import { getLayout as getBaseLayout } from './site'
 
 export type Props = {
@@ -25,14 +19,9 @@ const Layout: NextLayout<Props> = ({ children, meta }) => {
   return (
     <>
       <Head>
-        <title>
-          {meta?.title ? `${meta.title} — Mirror Design` : 'Mirror Design'}
-        </title>
+        <title>{meta?.title ? `${meta.title} — Kali Design` : 'Kali Design'}</title>
         <meta
-          content={
-            meta?.description ??
-            'Design system for Mirror.xyz built with React and vanilla-extract.'
-          }
+          content={meta?.description ?? 'Design system for Kali apps built with React and vanilla-extract.'}
           key="description"
           name="description"
         />
@@ -54,13 +43,7 @@ const Layout: NextLayout<Props> = ({ children, meta }) => {
 
         <Box as="main" marginLeft={{ md: '64' }}>
           <SkipNavContent />
-          <Box
-            as="article"
-            maxWidth="224"
-            paddingBottom="20"
-            paddingTop="20"
-            paddingX={{ lg: '10' }}
-          >
+          <Box as="article" maxWidth="224" paddingBottom="20" paddingTop="20" paddingX={{ lg: '10' }}>
             {meta && <Header {...meta} />}
 
             {children}
@@ -71,7 +54,6 @@ const Layout: NextLayout<Props> = ({ children, meta }) => {
   )
 }
 
-export const getLayout: GetLayout<Props> = (page) =>
-  getBaseLayout(<Layout {...page.props}>{page}</Layout>)
+export const getLayout: GetLayout<Props> = (page) => getBaseLayout(<Layout {...page.props}>{page}</Layout>)
 
 export default Layout

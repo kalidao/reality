@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { PropItem } from 'react-docgen-typescript'
 
-import { Box, Button, Stack, Text, VisuallyHidden } from 'degen/components'
+import { Box, Button, Stack, Text, VisuallyHidden } from 'reality/components'
 
 import { Link } from './Link'
 
@@ -23,12 +23,7 @@ export const PropsTable = ({ sourceLink, types }: Props) => {
     showDescriptions: Object.values(types).some((x) => x.description !== ''),
   })
 
-  const headers = [
-    'name',
-    'type',
-    'default',
-    ...(state.showDescriptions ? ['description'] : []),
-  ]
+  const headers = ['name', 'type', 'default', ...(state.showDescriptions ? ['description'] : [])]
   const props = Object.values(types).sort((a, b) => {
     if (a.name.startsWith('on') || b.name.startsWith('on')) return 1
     if (a.name < b.name) return -1
@@ -44,20 +39,12 @@ export const PropsTable = ({ sourceLink, types }: Props) => {
             <Box as="thead">
               <Box as="tr" textAlign="left">
                 {headers.map((x, i) => (
-                  <Box
-                    as="th"
-                    backgroundColor="background"
-                    key={x}
-                    position="sticky"
-                    top="0"
-                  >
+                  <Box as="th" backgroundColor="background" key={x} position="sticky" top="0">
                     <Box
                       backgroundColor="foregroundTertiary"
                       borderColor="foregroundSecondary"
                       borderLeftRadius={i === 0 ? 'large' : undefined}
-                      borderRightRadius={
-                        i === headers.length - 1 ? 'large' : undefined
-                      }
+                      borderRightRadius={i === headers.length - 1 ? 'large' : undefined}
                       paddingX="4"
                       paddingY="2.5"
                     >

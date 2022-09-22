@@ -41,8 +41,7 @@ export const Avatar = ({
 
   const showPlaceholder = placeholder || error || !src
 
-  const placeholderBackground =
-    BACKGROUND_GRADIENTS[parseInt(address ?? '0') % 3]
+  const placeholderBackground = BACKGROUND_GRADIENTS[parseInt(address ?? '0') % 3]
 
   return (
     <Box

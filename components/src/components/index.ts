@@ -21,10 +21,5 @@ export { Stat } from './Stat'
 export { Tag } from './Tag'
 export { Text } from './Text'
 export { Textarea } from './Textarea'
-export {
-  ThemeProvider,
-  useTheme,
-  themeModeAttribute,
-  getThemeAccentStyles,
-} from './ThemeProvider'
+export { ThemeProvider, useTheme, themeModeAttribute, getThemeAccentStyles } from './ThemeProvider'
 export { VisuallyHidden } from './VisuallyHidden'

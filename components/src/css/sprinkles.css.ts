@@ -173,8 +173,7 @@ const unresponsiveProperties = defineProperties({
     transitionProperty: {
       none: 'none',
       all: 'all',
-      default:
-        'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+      default: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
       colors: 'background-color, border-color, color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
@@ -187,15 +186,7 @@ const unresponsiveProperties = defineProperties({
       inOut: 'cubic-bezier(0.42, 0, 0.58, 1)',
     },
     visibility: ['hidden', 'visible'],
-    whiteSpace: [
-      'normal',
-      'nowrap',
-      'pre',
-      'pre-line',
-      'pre-wrap',
-      'initial',
-      'inherit',
-    ],
+    whiteSpace: ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'initial', 'inherit'],
     wordBreak: ['break-word'],
     wordWrap: ['normal', 'break-word', 'initial', 'inherit'],
     zIndex: {
@@ -279,19 +270,18 @@ export const sprinkles = createSprinkles(
 )
 export type Sprinkles = Parameters<typeof sprinkles>[0]
 
-export type OptionalResponsiveValue<Value extends string | number> =
-  ConditionalValue<typeof responsiveProperties, Value>
-export type RequiredResponsiveValue<Value extends string | number> =
-  RequiredConditionalValue<typeof responsiveProperties, Value>
+export type OptionalResponsiveValue<Value extends string | number> = ConditionalValue<
+  typeof responsiveProperties,
+  Value
+>
+export type RequiredResponsiveValue<Value extends string | number> = RequiredConditionalValue<
+  typeof responsiveProperties,
+  Value
+>
 
-export type OptionalResponsiveObject<Value> =
-  | Value
-  | Partial<Record<Breakpoint, Value>>
-export type RequiredResponsiveObject<Value> = Partial<
-  Record<Breakpoint, Value>
-> &
+export type OptionalResponsiveObject<Value> = Value | Partial<Record<Breakpoint, Value>>
+export type RequiredResponsiveObject<Value> = Partial<Record<Breakpoint, Value>> &
   Record<typeof breakpointNames[0], Value>
 
-export const normalizeResponsiveValue =
-  createNormalizeValueFn(responsiveProperties)
+export const normalizeResponsiveValue = createNormalizeValueFn(responsiveProperties)
 export const mapResponsiveValue = createMapValueFn(responsiveProperties)

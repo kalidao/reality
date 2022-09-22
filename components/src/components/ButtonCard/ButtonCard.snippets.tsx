@@ -8,10 +8,7 @@ export const snippets: Snippet[] = [
   {
     name: 'Basic',
     code: (
-      <ButtonCard
-        buttonText="Connect"
-        prefix={<IconExclamationCircle color="accent" />}
-      >
+      <ButtonCard buttonText="Connect" prefix={<IconExclamationCircle color="accent" />}>
         Connect your wallet.
       </ButtonCard>
     ),

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { default as copy } from 'copy-to-clipboard'
 
-import { Button, IconCheck, IconDuplicate } from 'degen/components'
+import { Button, IconCheck, IconDuplicate } from 'reality/components'
 
 type Props = {
   content: string
@@ -30,10 +30,7 @@ export const CopyButton = ({ content }: Props) => {
     })
 
     setState((x) => ({ ...x, copied: true }))
-    timeoutRef.current = setTimeout(
-      () => setState((x) => ({ ...x, copied: false })),
-      500,
-    )
+    timeoutRef.current = setTimeout(() => setState((x) => ({ ...x, copied: false })), 500)
   }, [content])
 
   return (

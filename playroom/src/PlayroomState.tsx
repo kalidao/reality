@@ -13,27 +13,17 @@ const unwrapValue = (value: any) => {
   if (typeof value === 'object' && value !== null && 'currentTarget' in value) {
     const { currentTarget } = value
 
-    actualValue =
-      currentTarget.type === 'checkbox'
-        ? currentTarget.checked
-        : currentTarget.value
+    actualValue = currentTarget.type === 'checkbox' ? currentTarget.checked : currentTarget.value
   }
   return actualValue
 }
 
-const makeStoreConsumer = (
-  defaultState: Map<string, any>,
-  store: Store,
-  setStore: (newStore: Store) => void,
-) => {
-  const setDefaultState = (key: string, value: any) =>
-    defaultState.set(key, value)
+const makeStoreConsumer = (defaultState: Map<string, any>, store: Store, setStore: (newStore: Store) => void) => {
+  const setDefaultState = (key: string, value: any) => defaultState.set(key, value)
 
   const getState = (key: string) => store.get(key) ?? defaultState.get(key)
 
-  const setState = curry((key: string, value: any) =>
-    setStore(new Map(store.set(key, unwrapValue(value)))),
-  )
+  const setState = curry((key: string, value: any) => setStore(new Map(store.set(key, unwrapValue(value)))))
 
   const toggleState = (key: string) => setState(key, !getState(key))
 
@@ -57,31 +47,19 @@ const makeStoreConsumer = (
   }
 }
 
-const PlayroomStateContext = React.createContext<ReturnType<
-  typeof makeStoreConsumer
-> | null>(null)
+const PlayroomStateContext = React.createContext<ReturnType<typeof makeStoreConsumer> | null>(null)
 
 type Props = {
   defaultState?: Map<string, any>
 }
 
-export const PlayroomStateProvider = ({
-  defaultState: defaultStateProp,
-  children,
-}: React.PropsWithChildren<Props>) => {
+export const PlayroomStateProvider = ({ defaultState: defaultStateProp, children }: React.PropsWithChildren<Props>) => {
   const [fallbackDefaultState] = React.useState(() => new Map())
   const defaultState = defaultStateProp ?? fallbackDefaultState
   const state = React.useState(new Map<string, any>())
-  const storeConsumer = React.useMemo(
-    () => makeStoreConsumer(defaultState, ...state),
-    [state, defaultState],
-  )
+  const storeConsumer = React.useMemo(() => makeStoreConsumer(defaultState, ...state), [state, defaultState])
 
-  return (
-    <PlayroomStateContext.Provider value={storeConsumer}>
-      {children}
-    </PlayroomStateContext.Provider>
-  )
+  return <PlayroomStateContext.Provider value={storeConsumer}>{children}</PlayroomStateContext.Provider>
 }
 
 export const usePlayroomStore = () => {
@@ -103,18 +81,13 @@ export const useFallbackState = <Value, Handler extends Callback>(
   defaultValue?: Value,
 ): [NonNullable<Value>, (...args: Parameters<Handler>) => void] => {
   const playroomState = usePlayroomStore()
-  const [internalStateValue, setInternalStateValue] =
-    React.useState(defaultValue)
+  const [internalStateValue, setInternalStateValue] = React.useState(defaultValue)
 
   const wrapChangeHandler =
-    (
-      handler: Handler | typeof noop,
-    ): ((...args: Parameters<Handler>) => void) =>
+    (handler: Handler | typeof noop): ((...args: Parameters<Handler>) => void) =>
     (...args) => {
       if (value === undefined) {
-        ;(stateKey ? playroomState.setState(stateKey) : setInternalStateValue)(
-          unwrapValue(args[0]),
-        )
+        ;(stateKey ? playroomState.setState(stateKey) : setInternalStateValue)(unwrapValue(args[0]))
       }
 
       ;(handler || noop)(...args)
@@ -122,11 +95,7 @@ export const useFallbackState = <Value, Handler extends Callback>(
 
   const handleChange = wrapChangeHandler(onChange || noop)
 
-  const resolvedValue =
-    value ??
-    (stateKey
-      ? playroomState.getState(stateKey) ?? defaultValue
-      : internalStateValue)
+  const resolvedValue = value ?? (stateKey ? playroomState.getState(stateKey) ?? defaultValue : internalStateValue)
 
   return [resolvedValue, handleChange]
 }

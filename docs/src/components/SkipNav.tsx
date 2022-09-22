@@ -5,8 +5,8 @@ import {
 } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
 
-import { Box } from 'degen/components'
-import { vars } from 'degen/css'
+import { Box } from 'reality/components'
+import { vars } from 'reality/css'
 
 export const SkipNavLink = ({ children, ...rest }: SkipNavLinkProps) => {
   return (

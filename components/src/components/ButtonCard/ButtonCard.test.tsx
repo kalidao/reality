@@ -10,10 +10,7 @@ describe('<ButtonCard />', () => {
 
   it('renders', () => {
     render(
-      <ButtonCard
-        buttonText="OK"
-        prefix={<IconExclamationCircle color="accent" />}
-      >
+      <ButtonCard buttonText="OK" prefix={<IconExclamationCircle color="accent" />}>
         Connect your wallet.
       </ButtonCard>,
     )

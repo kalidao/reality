@@ -7,7 +7,7 @@ module.exports = {
   components: './src/components.ts',
   baseUrl: '/playroom/',
   outputPath: '../docs/public/playroom',
-  title: 'Mirror',
+  title: 'Kali',
   snippets: './src/snippets.ts',
   themes: './src/themes.ts',
   frameComponent: './src/FrameComponent.tsx',
@@ -45,11 +45,7 @@ module.exports = {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: [
-                '@babel/preset-env',
-                '@babel/preset-typescript',
-                '@babel/preset-react',
-              ],
+              presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
               plugins: ['@vanilla-extract/babel-plugin'],
             },
           },
@@ -58,7 +54,7 @@ module.exports = {
     },
     resolve: {
       alias: {
-        degen: path.resolve(__dirname, '../components/src'),
+        reality: path.resolve(__dirname, '../components/src'),
       },
       extensions: ['.js', '.ts', '.tsx'],
     },

@@ -8,11 +8,7 @@ type Args = {
   id?: string
 }
 
-export const useFieldIds = ({
-  description: hasDescription,
-  error: hasError,
-  id: contentId,
-}: Args = {}) => {
+export const useFieldIds = ({ description: hasDescription, error: hasError, id: contentId }: Args = {}) => {
   const _id = useId()
   return React.useMemo(() => {
     const id = `${_id}${contentId ? `-${contentId}` : ''}`

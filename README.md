@@ -20,7 +20,7 @@ Visit [https://degen-xyz.vercel.app](https://degen-xyz.vercel.app) to view the f
 ## Usage
 
 ```
-yarn add degen
+yarn add reality
 ```
 
 ## Development
@@ -34,8 +34,10 @@ yarn dev
 
 ## CI
 
-[Add secrets](https://github.com/mirror-xyz/degen/settings/secrets/actions) to GitHub:
+[Add secrets](https://github.com/kalidao/reality/settings/secrets/actions) to GitHub:
 
 ```
 NPM_TOKEN
 ```
+
+Adopted from Mirror.xyz

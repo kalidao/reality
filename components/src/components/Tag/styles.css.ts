@@ -28,8 +28,7 @@ const getToneHoverCompoundVariant = (tone: 'blue' | 'green' | 'red') => {
   }
 }
 
-const getToneColor = (color: CSSVarFunction) =>
-  rgb(color, `calc(${vars.mode.shades.accentSecondary} * 0.5)`)
+const getToneColor = (color: CSSVarFunction) => rgb(color, `calc(${vars.mode.shades.accentSecondary} * 0.5)`)
 
 export const variants = recipe({
   base: [
@@ -115,6 +114,14 @@ export const variants = recipe({
         }),
         style({
           backgroundColor: getToneColor(vars.mode.colors.pink),
+        }),
+      ]),
+      violet: style([
+        atoms({
+          color: 'violet',
+        }),
+        style({
+          backgroundColor: getToneColor(vars.mode.colors.violet),
         }),
       ]),
     },

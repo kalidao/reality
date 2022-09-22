@@ -1,7 +1,7 @@
 {
-  "name": "degen",
+  "name": "reality",
   "version": "0.0.112",
-  "description": "Design system for Mirror.xyz",
+  "description": "Design system for Kali apps",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
   "types": "./dist/types/index.d.ts",
@@ -23,7 +23,7 @@
   "files": [
     "dist/**"
   ],
-  "repository": "mirror-xyz/degen",
+  "repository": "kalidao/reality",
   "license": "MIT",
   "scripts": {
     "build": "vite build",

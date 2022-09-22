@@ -40,8 +40,8 @@ export type ThemeProviderProps = {
 
 export const ThemeProvider = ({
   children,
-  defaultAccent = 'blue',
-  defaultMode = 'light',
+  defaultAccent = 'violet',
+  defaultMode = 'dark',
   element = ':root',
   forcedAccent,
   forcedMode,
@@ -68,10 +68,7 @@ export const ThemeProvider = ({
     if (root) {
       const enable = disableAnimation()
       root.setAttribute(themeModeAttribute, resolvedMode)
-      setElementVars(
-        root as HTMLElement,
-        getThemeAccentStyles({ mode: resolvedMode, accent: resolvedAccent }),
-      )
+      setElementVars(root as HTMLElement, getThemeAccentStyles({ mode: resolvedMode, accent: resolvedAccent }))
       enable()
     }
   }, [element, resolvedAccent, resolvedMode])
@@ -85,13 +82,7 @@ export const useTheme = () => {
   return context
 }
 
-export const getThemeAccentStyles = ({
-  mode,
-  accent,
-}: {
-  mode: Mode
-  accent: Accent
-}) => {
+export const getThemeAccentStyles = ({ mode, accent }: { mode: Mode; accent: Accent }) => {
   return {
     [vars.mode.colors.accent]: getModeColors(mode)[accent],
     [vars.mode.colors.accentText]: getAccentText(mode, accent),

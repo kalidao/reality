@@ -1,14 +1,7 @@
 import * as React from 'react'
 
-import { Accent } from 'degen/tokens'
-import {
-  Box,
-  Button,
-  Skeleton,
-  SkeletonGroup,
-  Stack,
-  useTheme,
-} from 'degen/components'
+import { Accent } from 'reality/tokens'
+import { Box, Button, Skeleton, SkeletonGroup, Stack, useTheme } from 'reality/components'
 
 import { setThemeAccent, setThemeMode } from '~/utils/cookies'
 import { useIsMounted } from '~/utils/isMounted'
@@ -50,10 +43,10 @@ export const ThemeSwitcher = () => {
   )
 }
 
-const getNextAccent = (
-  accent: Accent | 'foreground',
-): Accent | 'foreground' => {
+const getNextAccent = (accent: Accent | 'foreground'): Accent | 'foreground' => {
   switch (accent) {
+    case 'violet':
+      return 'blue'
     case 'blue':
       return 'green'
     case 'green':
@@ -73,6 +66,6 @@ const getNextAccent = (
     case 'yellow':
       return 'foreground'
     case 'foreground':
-      return 'blue'
+      return 'violet'
   }
 }

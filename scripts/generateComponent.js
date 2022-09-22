@@ -82,7 +82,7 @@ const componentsDir = path.join(baseDir, 'components/src/components')
           ---
 
           \`\`\`tsx
-          import { ${componentName} } from 'degen'
+          import { ${componentName} } from 'reality'
           \`\`\`
 
           \`\`\`tsx live=true expand=true
@@ -143,11 +143,7 @@ const componentsDir = path.join(baseDir, 'components/src/components')
     const componentIndex = dedent`
       export { ${componentName} } from './${componentName}'
     `
-    await fs.writeFile(
-      path.join(componentDir, 'index.ts'),
-      componentIndex,
-      'utf-8',
-    )
+    await fs.writeFile(path.join(componentDir, 'index.ts'), componentIndex, 'utf-8')
 
     // Add to components index
     console.log('Exporting from components...')

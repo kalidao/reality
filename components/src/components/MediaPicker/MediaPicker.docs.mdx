@@ -4,7 +4,7 @@ description: Surface for accepting media
 ---
 
 ```tsx
-import { MediaPicker } from 'degen'
+import { MediaPicker } from 'reality'
 ```
 
 ```tsx live=true expand=true
@@ -24,10 +24,7 @@ import { MediaPicker } from 'degen'
 ## Error
 
 ```tsx live=true
-<MediaPicker
-  error="Image is required"
-  label="Choose or drag and drop an image"
-/>
+<MediaPicker error="Image is required" label="Choose or drag and drop an image" />
 ```
 
 ## Uploading
@@ -65,11 +62,7 @@ import { MediaPicker } from 'degen'
 
 ```tsx live=true
 <Stack>
-  <MediaPicker
-    accept="image/jpeg, image/png, image/webp"
-    compact
-    label="Choose or drag and drop an image"
-  />
+  <MediaPicker accept="image/jpeg, image/png, image/webp" compact label="Choose or drag and drop an image" />
   <MediaPicker
     accept="image/gif, video/mp4, video/ogg, video/webm"
     compact

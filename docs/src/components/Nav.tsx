@@ -2,7 +2,7 @@ import { useRouter } from 'next/dist/client/router'
 import * as React from 'react'
 import NextImage from 'next/image'
 
-import { Box, Button, Stack, Text } from 'degen/components'
+import { Box, Button, Stack, Text } from 'reality/components'
 
 import { createGitHubLink } from '~/utils/github'
 import { createPlayroomLink } from '~/utils/playroom'
@@ -60,14 +60,8 @@ export const Nav = ({ links }: Props) => {
             </NavLink>
 
             <Box display={{ md: 'none' }}>
-              <Button
-                size="small"
-                variant="tertiary"
-                onClick={() => setState((x) => ({ ...x, open: !x.open }))}
-              >
-                <Box aria-label={state.open ? 'Close menu' : 'Open menu'}>
-                  Menu
-                </Box>
+              <Button size="small" variant="tertiary" onClick={() => setState((x) => ({ ...x, open: !x.open }))}>
+                <Box aria-label={state.open ? 'Close menu' : 'Open menu'}>Menu</Box>
               </Button>
             </Box>
           </Stack>
@@ -103,13 +97,7 @@ export const Nav = ({ links }: Props) => {
 
               <Stack space="3">
                 {x.links.map((y) => (
-                  <NavLink
-                    active={
-                      isMounted && router.asPath.split('#')[0] === y.route
-                    }
-                    href={y.route}
-                    key={y.route}
-                  >
+                  <NavLink active={isMounted && router.asPath.split('#')[0] === y.route} href={y.route} key={y.route}>
                     {y.name}
                   </NavLink>
                 ))}
@@ -133,10 +121,7 @@ const NavLink = ({
   return (
     <Box width="max">
       <Link href={href}>
-        <Text
-          color={active ? 'accent' : 'text'}
-          weight={active ? 'medium' : 'normal'}
-        >
+        <Text color={active ? 'accent' : 'text'} weight={active ? 'medium' : 'normal'}>
           {children}
         </Text>
       </Link>

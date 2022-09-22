@@ -6,10 +6,10 @@ import * as styles from '../styles/utils.css'
   description={
     <>
       Design system for{' '}
-      <Link className={styles.link} href="https://mirror.xyz">
-        Mirror.xyz
+      <Link className={styles.link} href="https://www.kali.gg/">
+        Kali
       </Link>{' '}
-      built with{' '}
+      apps built with{' '}
       <Link className={styles.link} href="https://reactjs.org/">
         React
       </Link>{' '}
@@ -20,13 +20,13 @@ import * as styles from '../styles/utils.css'
       .
     </>
   }
-  title="Mirror Design System"
+  title="Kali Design System"
 />
 
 ## Install
 
 ```bash
-yarn add degen
+yarn add reality
 ```
 
 ## Set Up
@@ -34,8 +34,8 @@ yarn add degen
 Wrap the root of your app in a [`ThemeProvider`](/components/ThemeProvider), import the external stylesheet, and add [Inter](https://rsms.me/inter/) and [iA Writer Mono](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Mono) to your font stack. (Tip: Both fonts are available on [Fontsource](https://fontsource.org).)
 
 ```tsx
-import { ThemeProvider } from 'degen'
-import 'degen/styles'
+import { ThemeProvider } from 'reality'
+import 'reality/styles'
 
 const App = () => {
   return <ThemeProvider>{children}</ThemeProvider>
@@ -45,16 +45,12 @@ const App = () => {
 ## Use Components
 
 ```tsx
-import { Button, IconLockClosed, Stack } from 'degen'
+import { Button, IconLockClosed, Stack } from 'reality'
 ```
 
 ```tsx live=true expand=true
 <Stack align="center">
-  <Button
-    prefix={<IconLockClosed />}
-    variant="primary"
-    width={{ xs: 'full', md: 'max' }}
-  >
+  <Button prefix={<IconLockClosed />} variant="primary" width={{ xs: 'full', md: 'max' }}>
     Connect Wallet
   </Button>
 </Stack>

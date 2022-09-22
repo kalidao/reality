@@ -1,23 +1,14 @@
 import * as React from 'react'
 import { RenderResult, render as defaultRender } from '@testing-library/react'
-import {
-  RenderHookOptions,
-  WrapperComponent,
-  renderHook as defaultRenderHook,
-} from '@testing-library/react-hooks'
+import { RenderHookOptions, WrapperComponent, renderHook as defaultRenderHook } from '@testing-library/react-hooks'
 
-import {
-  ThemeProvider,
-  ThemeProviderProps,
-} from '../src/components/ThemeProvider'
+import { ThemeProvider, ThemeProviderProps } from '../src/components/ThemeProvider'
 
 import '@testing-library/jest-dom/extend-expect'
 import './mocks/URL.js'
 
 type ProvidersProps = {
-  children:
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | React.ReactNode
+  children: React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactNode
   themeProps?: ThemeProviderProps
 }
 export const Providers = ({ children, themeProps }: ProvidersProps) => {
@@ -31,10 +22,7 @@ type DefaultParams = Parameters<typeof defaultRender>
 type RenderUI = DefaultParams[0]
 type RenderOptions = DefaultParams[1]
 
-const render = (
-  ui: RenderUI,
-  { wrapper, ...options }: RenderOptions = {},
-): RenderResult => {
+const render = (ui: RenderUI, { wrapper, ...options }: RenderOptions = {}): RenderResult => {
   if (!wrapper) wrapper = Providers as any
   return defaultRender(ui, { wrapper, ...options })
 }

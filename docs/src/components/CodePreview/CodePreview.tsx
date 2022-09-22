@@ -5,9 +5,9 @@ import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
 import { mdx } from '@mdx-js/react'
 import { PrismTheme } from 'prism-react-renderer'
 
-import * as Components from 'degen/components'
-import { Box, Button, Stack, Text, useTheme } from 'degen/components'
-import { vars } from 'degen/css'
+import * as Components from 'reality/components'
+import { Box, Button, Stack, Text, useTheme } from 'reality/components'
+import { vars } from 'reality/css'
 
 import { createPlayroomLink } from '~/utils/playroom'
 import { usePlayroomStore } from '../../../../playroom/src/PlayroomState'
@@ -30,12 +30,7 @@ const initialState = {
   expand: false,
 }
 
-export const CodePreview = ({
-  backgroundColor = 'background',
-  code,
-  expand = false,
-  theme,
-}: Props) => {
+export const CodePreview = ({ backgroundColor = 'background', code, expand = false, theme }: Props) => {
   const previewRef = React.useRef<HTMLElement>(null)
   const [state, setState] = React.useState<State>({
     ...initialState,
@@ -102,21 +97,11 @@ export const CodePreview = ({
 
       <Box marginY="2">
         <Stack direction="horizontal" justify="flex-end" space="2">
-          <Button
-            size="small"
-            variant="transparent"
-            onClick={() => setState((x) => ({ ...x, expand: !x.expand }))}
-          >
+          <Button size="small" variant="transparent" onClick={() => setState((x) => ({ ...x, expand: !x.expand }))}>
             {state.expand ? 'Hide Code' : 'View Code'}
           </Button>
 
-          <Button
-            as="a"
-            href={createPlayroomLink({ code })}
-            size="small"
-            target="_blank"
-            variant="transparent"
-          >
+          <Button as="a" href={createPlayroomLink({ code })} size="small" target="_blank" variant="transparent">
             Open in Playroom
           </Button>
         </Stack>

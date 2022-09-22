@@ -3,16 +3,7 @@ import * as React from 'react'
 import { Box, BoxProps } from '../Box'
 import * as styles from './styles.css'
 
-type Props = Pick<
-  BoxProps,
-  | 'marginX'
-  | 'marginY'
-  | 'width'
-  | 'flex'
-  | 'flexBasis'
-  | 'flexGrow'
-  | 'flexShrink'
-> &
+type Props = Pick<BoxProps, 'marginX' | 'marginY' | 'width' | 'flex' | 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   React.InputHTMLAttributes<HTMLInputElement>
 
 export const Range = React.forwardRef(

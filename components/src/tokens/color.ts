@@ -1,15 +1,6 @@
 export type Mode = 'light' | 'dark'
 
-export type Accent =
-  | 'blue'
-  | 'green'
-  | 'indigo'
-  | 'orange'
-  | 'pink'
-  | 'purple'
-  | 'red'
-  | 'teal'
-  | 'yellow'
+export type Accent = 'blue' | 'green' | 'indigo' | 'orange' | 'pink' | 'purple' | 'red' | 'teal' | 'yellow' | 'violet'
 
 const accents: { [key in Mode]: { [key in Accent]: string } } = {
   light: {
@@ -22,6 +13,7 @@ const accents: { [key in Mode]: { [key in Accent]: string } } = {
     red: '255, 59, 48',
     teal: '90, 200, 250',
     yellow: '255, 204, 0',
+    violet: '76, 29, 149',
   },
   dark: {
     blue: '10, 132, 255',
@@ -33,6 +25,7 @@ const accents: { [key in Mode]: { [key in Accent]: string } } = {
     red: '255, 69, 58',
     teal: '100, 210, 255',
     yellow: '255, 214, 10',
+    violet: '167, 139, 250',
   },
 }
 

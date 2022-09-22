@@ -1,1 +1,1 @@
-export * from 'degen/components'
+export * from 'reality/components'

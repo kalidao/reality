@@ -1,16 +1,11 @@
-import {
-  GetStaticPaths,
-  GetStaticProps,
-  InferGetStaticPropsType,
-  NextPageWithLayout,
-} from 'next'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPageWithLayout } from 'next'
 import fs from 'fs-extra'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 import { PropItem } from 'react-docgen-typescript'
 
-import { Box, Text } from 'degen/components'
+import { Box, Text } from 'reality/components'
 
 import { Props as LayoutProps, getLayout } from '~/layouts/docs'
 import { getComponentName, getComponentPaths } from '~/utils/fs'
@@ -37,9 +32,7 @@ type StaticProps = {
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   const slug = context.params?.slug?.toString() as string
-  const pathname = getComponentPaths().find(
-    (x) => getComponentName(x) === slug,
-  ) as string
+  const pathname = getComponentPaths().find((x) => getComponentName(x) === slug) as string
   const source = fs.readFileSync(pathname)
   const { content, data } = matter(source)
 
@@ -50,10 +43,8 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   const componentPathname = pathname.replace('docs.mdx', 'tsx')
   const staticTypes = getStaticTypes(componentPathname)[slug] ?? null
 
-  const docsLink = createGitHubLink(pathname.replace(/^\/.*degen/i, ''))
-  const sourceLink = createGitHubLink(
-    componentPathname.replace(/^\/.*degen/i, ''),
-  )
+  const docsLink = createGitHubLink(pathname.replace(/^\/.*reality/i, ''))
+  const sourceLink = createGitHubLink(componentPathname.replace(/^\/.*reality/i, ''))
 
   return {
     props: {
@@ -68,12 +59,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
-const Page: NextPageWithLayout<Props> = ({
-  docsLink,
-  source,
-  sourceLink,
-  staticTypes,
-}: Props) => {
+const Page: NextPageWithLayout<Props> = ({ docsLink, source, sourceLink, staticTypes }: Props) => {
   return (
     <>
       <MDXRemote

@@ -55,10 +55,7 @@ const svgrConfig = {
 }
 
 const baseDir = path.join(__dirname, '..')
-const iconComponentsDir = path.join(
-  baseDir,
-  'components/src/components/icons/generated',
-)
+const iconComponentsDir = path.join(baseDir, 'components/src/components/icons/generated')
 
 ;(async () => {
   // Clean old files
@@ -90,11 +87,7 @@ const iconComponentsDir = path.join(
     // Write SVG React component
     const componentName = `${svgName}Svg`
     const svgComponentCode = svgr.sync(svg, svgrConfig, { componentName })
-    await fs.writeFile(
-      path.join(iconDir, `${componentName}.tsx`),
-      svgComponentCode,
-      { encoding: 'utf-8' },
-    )
+    await fs.writeFile(path.join(iconDir, `${componentName}.tsx`), svgComponentCode, { encoding: 'utf-8' })
 
     // Write wrapper component
     await fs.writeFile(
@@ -143,7 +136,7 @@ const iconComponentsDir = path.join(
           ---
 
           \`\`\`tsx
-          import { ${svgName} } from 'degen'
+          import { ${svgName} } from 'reality'
           \`\`\`
 
           \`\`\`tsx live=true expand=true

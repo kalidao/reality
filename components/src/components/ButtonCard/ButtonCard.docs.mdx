@@ -4,15 +4,11 @@ description: Card with button and text
 ---
 
 ```tsx
-import { ButtonCard } from 'degen'
+import { ButtonCard } from 'reality'
 ```
 
 ```tsx live=true expand=true
-<ButtonCard
-  buttonText="Connect Wallet"
-  prefix={<IconExclamationCircle color="accent" />}
-  width="96"
->
+<ButtonCard buttonText="Connect Wallet" prefix={<IconExclamationCircle color="accent" />} width="96">
   Collecting this entry requires a minimum balance of{' '}
   <Text as="span" color="inherit" size="inherit" weight="semiBold">
     0.1 Optimistic ETH

@@ -4,7 +4,7 @@ description: Wrapper for form content
 ---
 
 ```tsx
-import { Field } from 'degen'
+import { Field } from 'reality'
 ```
 
 ```tsx live=true expand=true
@@ -60,9 +60,7 @@ The content wrapped by field sets an `id` automatically for accessibility. You c
   </Field>
 
   <Field label="Render prop">
-    {(ids) => (
-      <Box backgroundColor="foregroundSecondary" height="8" {...ids.content} />
-    )}
+    {(ids) => <Box backgroundColor="foregroundSecondary" height="8" {...ids.content} />}
   </Field>
 </Stack>
 ```

@@ -4,7 +4,7 @@ description: Wrapper for managing theme state
 ---
 
 ```tsx
-import { ThemeProvider } from 'degen'
+import { ThemeProvider } from 'reality'
 ```
 
 ## Props
@@ -16,11 +16,7 @@ import { ThemeProvider } from 'degen'
 Pass in an element selector or reference to change where the theme binds. By default, the theme attaches to the `:root` element.
 
 ```tsx live=true
-<ThemeProvider
-  defaultAccent="indigo"
-  defaultMode={mode === 'dark' ? 'light' : 'dark'}
-  element={previewRef.current}
->
+<ThemeProvider defaultAccent="indigo" defaultMode={mode === 'dark' ? 'light' : 'dark'} element={previewRef.current}>
   <Text>
     The element mode is {mode === 'dark' ? 'light' : 'dark'} and accent is{' '}
     <Text as="span" color="accent">
@@ -65,7 +61,7 @@ Passing `forcedAccent` and `forcedMode` allows you to override the internal stat
 Hook for accessing and setting theme-related properties.
 
 ```tsx
-import { useTheme } from 'degen'
+import { useTheme } from 'reality'
 ```
 
 ```tsx expand=true live=true
