@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Heading, Stack, Text } from '@kalidao/reality/components'
+import { Box, Heading, Stack, Text } from 'reality/components'
 
 type Props = {
   description?: React.ReactNode

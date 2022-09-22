@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { Accent } from '@kalidao/reality/tokens'
-import { Box, Button, Skeleton, SkeletonGroup, Stack, useTheme } from '@kalidao/reality/components'
+import { Accent } from 'reality/tokens'
+import { Box, Button, Skeleton, SkeletonGroup, Stack, useTheme } from 'reality/components'
 
 import { setThemeAccent, setThemeMode } from '~/utils/cookies'
 import { useIsMounted } from '~/utils/isMounted'

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import NextLink from 'next/link'
 
-import { Box } from '@kalidao/reality/components'
+import { Box } from 'reality/components'
 
 type NextLinkProps = Parameters<typeof NextLink>[0]
 

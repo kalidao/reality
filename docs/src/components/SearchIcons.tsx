@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { Box, IconSearch, Input, Stack, Text } from '@kalidao/reality/components'
-import * as Components from '@kalidao/reality/components'
+import { Box, IconSearch, Input, Stack, Text } from 'reality/components'
+import * as Components from 'reality/components'
 
 import { Link } from '~/components'
 

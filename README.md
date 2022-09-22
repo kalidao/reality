@@ -20,7 +20,7 @@ Visit [https://degen-xyz.vercel.app](https://degen-xyz.vercel.app) to view the f
 ## Usage
 
 ```
-yarn add @kalidao/reality
+yarn add reality
 ```
 
 ## Development

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { PropItem } from 'react-docgen-typescript'
 
-import { Box, Button, Stack, Text, VisuallyHidden } from '@kalidao/reality/components'
+import { Box, Button, Stack, Text, VisuallyHidden } from 'reality/components'
 
 import { Link } from './Link'
 

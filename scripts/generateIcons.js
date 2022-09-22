@@ -136,7 +136,7 @@ const iconComponentsDir = path.join(baseDir, 'components/src/components/icons/ge
           ---
 
           \`\`\`tsx
-          import { ${svgName} } from @kalidao/reality
+          import { ${svgName} } from 'reality'
           \`\`\`
 
           \`\`\`tsx live=true expand=true

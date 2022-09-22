@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic'
 import vsLight from 'prism-react-renderer/themes/vsLight'
 import vsDark from 'prism-react-renderer/themes/vsDark'
 
-import { vars } from '@kalidao/reality/css'
-import { Box, BoxProps, useTheme } from '@kalidao/reality/components'
+import { vars } from 'reality/css'
+import { Box, BoxProps, useTheme } from 'reality/components'
 
 import { useIsMounted } from '~/utils/isMounted'
 import { PlayroomStateProvider } from '../../../playroom/src/PlayroomState'

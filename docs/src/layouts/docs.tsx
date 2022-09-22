@@ -2,7 +2,7 @@ import * as React from 'react'
 import { GetLayout, NextLayout } from 'next'
 import Head from 'next/head'
 
-import { Box } from '@kalidao/reality/components'
+import { Box } from 'reality/components'
 
 import { Header, Nav, NavProps, SkipNavContent, SkipNavLink } from '~/components'
 import { getLayout as getBaseLayout } from './site'

@@ -1,1 +1,1 @@
-export * from '@kalidao/reality/components'
+export * from 'reality/components'

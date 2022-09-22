@@ -6,7 +6,7 @@
     "jsx": "preserve",
     "paths": {
       "~/*": ["./src/*"],
-      "@kalidao/reality/*": ["../components/src/*"]
+      "reality/*": ["../components/src/*"]
     },
     "target": "es5",
     "incremental": true
