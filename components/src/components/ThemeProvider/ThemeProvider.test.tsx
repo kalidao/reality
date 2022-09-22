@@ -26,10 +26,10 @@ describe('useTheme', () => {
     const { result } = renderHook(() => useTheme())
 
     expect(result.current).toStrictEqual({
-      accent: 'blue',
+      accent: 'violet',
       forcedAccent: undefined,
       forcedMode: undefined,
-      mode: 'light',
+      mode: 'dark',
       setAccent: expect.any(Function),
       setMode: expect.any(Function),
     })
@@ -37,7 +37,7 @@ describe('useTheme', () => {
 
   it('sets accent', () => {
     const { result } = renderHook(() => useTheme())
-    expect(result.current.accent).toStrictEqual('blue')
+    expect(result.current.accent).toStrictEqual('violet')
 
     actHook(() => {
       result.current.setAccent('green')
@@ -48,13 +48,13 @@ describe('useTheme', () => {
 
   it('sets mode', () => {
     const { result } = renderHook(() => useTheme())
-    expect(result.current.mode).toStrictEqual('light')
+    expect(result.current.mode).toStrictEqual('dark')
 
     actHook(() => {
-      result.current.setMode('dark')
+      result.current.setMode('light')
     })
 
-    expect(result.current.mode).toStrictEqual('dark')
+    expect(result.current.mode).toStrictEqual('light')
   })
 
   it('sets defaults', () => {

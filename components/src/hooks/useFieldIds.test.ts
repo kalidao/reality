@@ -5,78 +5,78 @@ import { useFieldIds } from './useFieldIds'
 const noArgs = {
   content: {
     'aria-describedby': undefined,
-    'aria-labelledby': 'realityty1-label',
-    id: 'realityty1',
+    'aria-labelledby': 'reality1-label',
+    id: 'reality1',
   },
   description: undefined,
   error: undefined,
   label: {
-    htmlFor: 'realityty1',
-    id: 'realityty1-label',
+    htmlFor: 'reality1',
+    id: 'reality1-label',
   },
 }
 
 const withId = {
   content: {
     'aria-describedby': undefined,
-    'aria-labelledby': 'realityty2-address-label',
-    id: 'realityty2-address',
+    'aria-labelledby': 'reality2-address-label',
+    id: 'reality2-address',
   },
   description: undefined,
   error: undefined,
   label: {
-    htmlFor: 'realityty2-address',
-    id: 'realityty2-address-label',
+    htmlFor: 'reality2-address',
+    id: 'reality2-address-label',
   },
 }
 
 const withDescription = {
   content: {
-    'aria-describedby': 'realityty3-description',
-    'aria-labelledby': 'realityty3-label',
-    id: 'realityty3',
+    'aria-describedby': 'reality3-description',
+    'aria-labelledby': 'reality3-label',
+    id: 'reality3',
   },
   description: {
-    id: 'realityty3-description',
+    id: 'reality3-description',
   },
   error: undefined,
   label: {
-    htmlFor: 'realityty3',
-    id: 'realityty3-label',
+    htmlFor: 'reality3',
+    id: 'reality3-label',
   },
 }
 
 const withError = {
   content: {
-    'aria-describedby': 'realityty4-error',
-    'aria-labelledby': 'realityty4-label',
-    id: 'realityty4',
+    'aria-describedby': 'reality4-error',
+    'aria-labelledby': 'reality4-label',
+    id: 'reality4',
   },
   description: undefined,
   error: {
-    id: 'realityty4-error',
+    id: 'reality4-error',
   },
   label: {
-    htmlFor: 'realityty4',
-    id: 'realityty4-label',
+    htmlFor: 'reality4',
+    id: 'reality4-label',
   },
 }
 
 const withDescriptionAndError = {
   content: {
-    'aria-describedby': 'realityty5-descriptiorealitylity5-error',
-    'aria-labelledby': 'realityty5-label',
-    id: 'realityty5',
+    'aria-describedby': 'reality5-description reality5-error',
+    'aria-labelledby': 'reality5-label',
+    id: 'reality5',
   },
   description: {
-    id: 'realityty5-description',
+    id: 'reality5-description',
   },
   error: {
-    id: 'realityty5-error',
+    id: 'reality5-error',
   },
   label: {
-    htmlFor: 'realityty5',
-    id: 'realityty5-label',
+    htmlFor: 'reality5',
+    id: 'reality5-label',
   },
 }
 
