@@ -36,7 +36,7 @@ jobs:
           git add package.json
           git commit -m "${{ github.event.release.tag_name }}"
       - name: Publish
-      - run: yarn workspace @kalidao/reality run publish
+        run: yarn workspace @kalidao/reality run publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
