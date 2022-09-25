@@ -37,8 +37,8 @@ jobs:
           git commit -m "${{ github.event.release.tag_name }}"
       - name: Publish
         run: |
-          yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }} --access public
-          yarn workspace @kalidao/reality run publish
+          yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }} 
+          yarn workspace @kalidao/reality run publish --access public
       - name: Push changes
         run: git push
         env:
