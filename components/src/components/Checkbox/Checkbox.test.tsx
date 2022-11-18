@@ -13,7 +13,7 @@ describe('<Checkbox />', () => {
     expect(screen.getByTitle('Agree')).toBe('Agree')
   })
 
-  it('renders with disagree checbox', () => {
+  it('renders with disagree checkbox', () => {
     render(<Checkbox label="I agree." tone="red" />)
     expect(screen.getByTitle('Disagree')).toBe('Disagree')
   })

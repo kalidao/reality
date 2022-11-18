@@ -48,7 +48,11 @@ export const Checkbox = React.forwardRef(
               tone,
             })}
           >
-            {tone === 'red' ? <IconClose /> : <IconCheck />}
+            {tone === 'red' ? (
+              <IconClose title="Disagree" titleId="disagree-icon" />
+            ) : (
+              <IconCheck title="Agree" titleId="agree-icon" />
+            )}
           </RadixCheckbox.Indicator>
         </RadixCheckbox.Root>
         <Box

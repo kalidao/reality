@@ -6,6 +6,6 @@ import { Checkbox } from './Checkbox'
 export const snippets: Snippet[] = [
   {
     name: 'Basic',
-    code: <Checkbox />,
+    code: <Checkbox label="I agree." />,
   },
 ]
