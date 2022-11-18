@@ -2,13 +2,13 @@
   <a aria-label="NPM version" href="https://www.npmjs.com/package/@kalidao/reality">
     <img
       alt=""
-      src="https://img.shields.io/npm/v/degen.svg?style=for-the-badge&labelColor=161c22"
+      src="https://img.shields.io/github/license/kalidao/reality"
     />
   </a>
   <a aria-label="License" href="/LICENSE">
     <img
       alt=""
-      src="https://img.shields.io/npm/l/degen.svg?style=for-the-badge&labelColor=161c22"
+      src="https://img.shields.io/npm/v/@kalidao/reality"
     />
   </a>
 </p>

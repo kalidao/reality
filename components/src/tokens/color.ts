@@ -47,7 +47,7 @@ export const colors = {
     ...accents.light,
   },
   dark: {
-    background: '20, 20, 20',
+    background: '0, 0, 0',
     backgroundSecondary: '10, 10, 10',
     backgroundTertiary: '20, 20, 20',
     foreground: '255, 255, 255',
