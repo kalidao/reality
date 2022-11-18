@@ -1,14 +1,14 @@
 import * as React from 'react'
 import * as RadixCheckbox from '@radix-ui/react-checkbox'
 
-import { IconCheck } from '../icons/'
+import { IconCheck, IconClose } from '../icons/'
 import { Box } from '../Box'
 import * as styles from './styles.css'
 
 type BaseProps = {
   label: string
-  size: styles.Size
-  variant: 'primary' | 'transparent'
+  size?: styles.Size
+  variant?: 'primary' | 'transparent'
 }
 
 type RadixCheckboxRoot = RadixCheckbox.CheckboxProps
@@ -48,7 +48,7 @@ export const Checkbox = React.forwardRef(
               tone,
             })}
           >
-            <IconCheck />
+            {tone === 'red' ? <IconClose /> : <IconCheck />}
           </RadixCheckbox.Indicator>
         </RadixCheckbox.Root>
         <Box
