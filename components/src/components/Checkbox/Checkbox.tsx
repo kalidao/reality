@@ -47,7 +47,6 @@ export const Checkbox = React.forwardRef(
               size,
               tone,
             })}
-            title={tone === 'red' ? 'Disagree' : 'Agree'}
           >
             {tone === 'red' ? <IconClose /> : <IconCheck />}
           </RadixCheckbox.Indicator>
