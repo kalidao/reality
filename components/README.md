@@ -1,4 +1,4 @@
-# Reality - Design Components  
+# Reality - Design Components
 
 ## Install
 

@@ -26,6 +26,7 @@ export {
   themeModeAttribute,
   getThemeAccentStyles,
   VisuallyHidden,
+  Checkbox,
 } from './components'
 export type { BoxProps } from './components'
 

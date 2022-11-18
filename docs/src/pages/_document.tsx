@@ -5,14 +5,11 @@ class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          {/* Fonts */}
-          <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
-
           {/* Preload fonts */}
           <link
             as="font"
             crossOrigin="anonymous"
-            href="https://rsms.me/inter/font-files/Inter-roman.var.woff2"
+            href="/fonts/PlayfairDisplay-VariableFont_wght.ttf"
             rel="preload"
             type="font/woff2"
           />
