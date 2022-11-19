@@ -10,6 +10,5 @@ describe('<Checkbox />', () => {
   it('renders with a label', () => {
     render(<Checkbox label="I agree." />)
     expect(screen.getByText('I agree.')).toBeInTheDocument()
-    expect(screen.getByTitle('Agree')).toBe('Agree')
   })
 })
