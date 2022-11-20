@@ -14,7 +14,7 @@ export const variants = recipe({
           transitionTimingFunction: 'inOut',
         }),
         style({
-          transitionDuration: '150ms',
+          transitionDuration: '125ms',
           selectors: {
             '&:hover': {
               boxShadow: `${vars.shadows['1']} ${vars.colors['foregroundTertiary']}`,
@@ -26,12 +26,6 @@ export const variants = recipe({
         }),
       ]),
       false: {},
-    },
-    level: {
-      '1': {},
-      '2': atoms({
-        backgroundColor: 'background',
-      }),
     },
     dark: {
       true: {},
@@ -46,20 +40,10 @@ export const variants = recipe({
     {
       variants: {
         dark: true,
-        level: '1',
       },
-      style: atoms({
-        backgroundColor: 'black',
-      }),
-    },
-    {
-      variants: {
-        dark: false,
-        level: '1',
+      style: {
+        border: `1px solid ${vars.colors.foregroundSecondary}`,
       },
-      style: atoms({
-        backgroundColor: 'white',
-      }),
     },
     {
       variants: {

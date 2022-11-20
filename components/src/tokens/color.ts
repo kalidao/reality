@@ -39,7 +39,7 @@ export const colors = {
   },
   light: {
     background: '255, 255, 255',
-    backgroundSecondary: '247, 247, 247',
+    backgroundSecondary: '250, 250, 250',
     backgroundTertiary: '247, 247, 247',
     foreground: '0, 0, 0',
     groupBackground: '255, 255, 255',
@@ -47,9 +47,9 @@ export const colors = {
     ...accents.light,
   },
   dark: {
-    background: '0, 0, 0',
+    background: '5, 5, 5',
     backgroundSecondary: '10, 10, 10',
-    backgroundTertiary: '20, 20, 20',
+    backgroundTertiary: '15, 15, 15',
     foreground: '255, 255, 255',
     groupBackground: '10, 10, 10',
     groupBorder: '255, 255, 255',
