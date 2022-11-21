@@ -48,6 +48,14 @@ export const variants = recipe({
     {
       variants: {
         dark: false,
+      },
+      style: {
+        border: `1px solid ${vars.colors.foregroundSecondary}`,
+      },
+    },
+    {
+      variants: {
+        dark: false,
         shadow: true,
       },
       style: style([
