@@ -68,38 +68,6 @@ const tone = {
 
 export type Tone = keyof typeof tone
 
-export const checkbox = style({
-  all: 'unset',
-  backgroundColor: vars.colors.background,
-  width: vars.space['10'],
-  height: vars.space['10'],
-  borderRadius: vars.radii.large,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  boxShadow: `0 0 0 1px ${vars.colors.foregroundSecondary}`,
-
-  selectors: {
-    '&[data-state="checked"]': {
-      backgroundColor: vars.colors.green,
-    },
-    '&[data-disabled]': {
-      backgroundColor: vars.colors.foregroundSecondary,
-    },
-  },
-
-  ':hover': {
-    backgroundColor: vars.colors.background,
-  },
-  ':focus': {
-    boxShadow: `0 0 0 2px ${vars.colors.foregroundSecondary}`,
-  },
-})
-
-export const indicator = style({
-  color: vars.colors.accent,
-})
-
 const variant = {
   primary: style([
     atoms({
