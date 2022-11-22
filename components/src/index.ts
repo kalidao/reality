@@ -27,6 +27,7 @@ export {
   getThemeAccentStyles,
   VisuallyHidden,
   Checkbox,
+  Divider,
 } from './components'
 export type { BoxProps } from './components'
 
