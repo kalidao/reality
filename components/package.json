@@ -1,6 +1,6 @@
 {
   "name": "@kalidao/reality",
-  "version": "0.0.9",
+  "version": "0.0.9-patch",
   "description": "Design system for Kali apps",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
