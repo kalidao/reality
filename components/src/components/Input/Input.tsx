@@ -47,12 +47,6 @@ type WithTypeNumber = {
   step?: NativeInputProps['step']
 }
 
-type WithDate = {
-  type?: 'datetime-local'
-  max?: NativeInputProps['max']
-  min?: NativeInputProps['min']
-}
-
 type Props = BaseProps & (WithTypeEmail | WithTypeText | WithTypeNumber)
 
 export const Input = React.forwardRef(
