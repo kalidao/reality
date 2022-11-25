@@ -22,7 +22,7 @@ type BaseProps = FieldBaseProps & {
   suffix?: React.ReactNode
   tabIndex?: NativeInputProps['tabIndex']
   textTransform?: BoxProps['textTransform']
-  type?: 'email' | 'number' | 'text'
+  type?: NativeInputProps['type']
   units?: string
   value?: string | number
   onBlur?: NativeInputProps['onBlur']
@@ -45,6 +45,12 @@ type WithTypeNumber = {
   max?: NativeInputProps['max']
   min?: NativeInputProps['min']
   step?: NativeInputProps['step']
+}
+
+type WithDate = {
+  type?: 'datetime-local'
+  max?: NativeInputProps['max']
+  min?: NativeInputProps['min']
 }
 
 type Props = BaseProps & (WithTypeEmail | WithTypeText | WithTypeNumber)
