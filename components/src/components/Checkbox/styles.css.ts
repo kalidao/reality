@@ -169,6 +169,7 @@ export const indicatorVariants = recipe({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      color: 'white',
     }),
   ]),
   variants: {

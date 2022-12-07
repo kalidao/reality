@@ -28,19 +28,39 @@ type Props = BaseProps & (WithTone | WithoutTone) & RadixCheckboxRoot & RadixChe
 
 export const Checkbox = React.forwardRef(
   (
-    { label, checked, size = 'small', tone = 'accent', variant = 'primary' }: Props,
+    {
+      label,
+      checked,
+      defaultChecked,
+      onCheckedChange,
+      required,
+      disabled,
+      name,
+      value,
+      asChild,
+      size = 'small',
+      tone = 'accent',
+      variant = 'primary',
+    }: Props,
     ref: React.Ref<HTMLButtonElement>,
   ) => {
     return (
       <Box alignItems="center" display="flex" gap="2" ref={ref}>
         <RadixCheckbox.Root
+          asChild={asChild}
           checked={checked}
           className={styles.variants({
             size,
             tone,
             variant,
           })}
+          defaultChecked={defaultChecked}
+          disabled={disabled}
+          name={name}
           ref={ref}
+          required={required}
+          value={value}
+          onCheckedChange={onCheckedChange}
         >
           <RadixCheckbox.Indicator
             className={styles.indicatorVariants({
