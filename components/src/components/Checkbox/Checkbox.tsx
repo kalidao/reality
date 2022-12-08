@@ -6,7 +6,7 @@ import { Box } from '../Box'
 import * as styles from './styles.css'
 
 type BaseProps = {
-  label: string
+  label: React.ReactNode
   size?: styles.Size
   variant?: 'primary' | 'transparent'
 }
