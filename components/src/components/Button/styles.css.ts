@@ -73,6 +73,14 @@ const getAccentVars = (colorVar: CSSVarFunction) => ({
 const tone = {
   accent: {},
   background: {},
+  foreground: style({
+    vars: {
+      [vars.colors.accent]: rgb(vars.mode.colors.foreground),
+      [vars.colors.accentText]: rgb(vars.mode.colors.background),
+      [vars.colors.accentSecondary]: rgb(vars.mode.colors.foreground, vars.mode.shades.accentSecondary),
+      [vars.colors.accentSecondaryHover]: rgb(vars.mode.colors.foreground, vars.mode.shades.accentSecondaryHover),
+    },
+  }),
   blue: style({
     vars: getAccentVars(vars.mode.colors.blue),
   }),
