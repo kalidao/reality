@@ -45,6 +45,8 @@ describe('<Input />', () => {
       expect(element).toHaveValue(null)
       userEvent.click(screen.getByText('Max'))
       expect(element).toHaveValue(20)
+
+      expect(screen.getByText('Max')).toHaveAttribute('type', 'button')
     })
 
     it('units', () => {

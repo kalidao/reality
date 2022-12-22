@@ -218,7 +218,7 @@ export const Input = React.forwardRef(
 
             {max && (
               <Box alignItems="center" display="flex" paddingRight={suffix ? undefined : '4'}>
-                <Box as="button" className={styles.max} onClick={handleMax}>
+                <Box as="button" className={styles.max} type="button" onClick={handleMax}>
                   Max
                 </Box>
               </Box>
